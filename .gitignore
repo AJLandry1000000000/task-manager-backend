@@ -1,5 +1,11 @@
+# dotenv environment variables file
 .env
 
+# Technical breakdown (very messy. see the README.md file for more description. README coming soon)
 build-spec.txt
 
+# Project description
 Fullstack_Tech_Challenge.docx
+
+# Dependency directories
+node_modules/
