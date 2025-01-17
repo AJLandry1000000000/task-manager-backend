@@ -1,5 +1,9 @@
+# Main 
+dist/
+
 # dotenv environment variables file
 .env
+.env.test
 
 # Technical breakdown (very messy. see the README.md file for more description. README coming soon)
 build-spec.txt
@@ -10,3 +14,6 @@ Fullstack_Tech_Challenge.docx
 # Dependencies and packages
 node_modules/
 package-lock.json
+
+# Migrations
+src/database/migrations/
