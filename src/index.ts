@@ -1,7 +1,16 @@
-require('dotenv').config({path: __dirname + '/../.env'});
-// require('dotenv').config();
+require('dotenv').config();
 
-const PORT = process.env.PORT
+import express from 'express'; 
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
+const PORT = process.env.PORT || 9999;
 
-console.log(`THE PORT IS = ${PORT}`)
+const app = express(); 
+
+app.use(bodyParser.json());
+app.use(cors());
+
+app.listen(PORT, async () => {
+    console.log(`The task application server is running on port: ${PORT} `);
+});
