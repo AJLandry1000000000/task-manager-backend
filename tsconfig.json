@@ -11,9 +11,9 @@
     "strict": true,
     "typeRoots": ["node_modules/@types", "src/@types"],
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"]
+      "@/*": ["src/*"],
     }
   },
   "allowSyntheticDefaultImports": true,
