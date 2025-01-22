@@ -1,18 +1,18 @@
-import { DateType, Model} from 'src/models/Model';
+import { DateType, Model} from './Model';
 
 export type TaskType = {
     id: number;
     name: string;
     description: string;
     due_date: Date;
-    // created_at: Date; // TODO
-    // updated_at: Date; // TODO
+    created_at: Date; 
+    updated_at: Date; 
 };
 
 export class TaskModel extends Model {
-    static tableName = 'users';
+    static tableName = 'tasks';
   
-    public static async create<Payload>(data: Payload): Promise<TaskType & DateType> {
+    public static async create<Payload>(data: Payload): Promise<TaskType> {
       return super.insert<Payload, TaskType>(data);
     }
   
