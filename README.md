@@ -175,7 +175,18 @@ The following features should be added to improve our applications features:
 - Add labelling of tasks so they can be organised. This is critical for large volumes of tasks.
 - Build authorisation methods for our server so it is more secure.
 - Add more filtering options. e.g. filter tasks by a label, filter tasks by tasks created by the current user, etc.
-- Add more tests.
+- Add more tests for the back-end.
+- Add a test suite for the front-end.
 
 ## Tests
-ARE TESTS FOR THE FRONTEND REQUIRED? MAYBE THIS IS A FUTURE IMPROVEMENTS TASK?
+I have included test (in test/taskRoutes.test.ts) for the following endpoints:
+- Check server health ```/health```
+- Create tasks ```/tasks-create/```
+- Update tasks ```/tasks-update/```
+- Get tasks ```/tasks-get/:page```
+
+I used Jest and supertest for the testing suite. 
+Run the tests with this command:  
+```npm run test```
+
+Note: You will have to fill a ```.env.test``` file with dummy data similar to your ```.env``` file.

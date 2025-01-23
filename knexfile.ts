@@ -2,7 +2,7 @@ require('dotenv').config();
 
 import type { Knex } from 'knex';
 
-const environments : string[] = ['development', 'staging', 'production'];
+const environments : string[] = ['development', 'staging', 'production', 'test'];
 
 const connection: Knex.ConnectionConfig = {
     host: process.env.DB_HOST as string,
