@@ -140,11 +140,12 @@ This satifies the "(Should have)" user stories. (Note that the ```/tasks-get/```
 
 
 ## Design decisions: Mitigating the risk of huge volumes of tasks created
-My approach was to use pagination and to use an indexed RDS for fast database queries (see the "Further improvements" section for more ideas on mitigating the volume related risks).
+My approach was to use pagination and to use an indexed RDS for fast database queries.  
 
 Pagination: This helps to load data in chunks rather than all at once, reducing the load on the frontend and improving the user experience.  
 Indexed RDS: Indexing your database can significantly speed up query performance by allowing the database to quickly locate the rows that match the query conditions.
 
+See the "Further improvements" section for more ideas on mitigating the volume related risks.
 
 ## Design decisions: Building the application for efficient scaling
 ### Model.ts super class
