@@ -42,8 +42,8 @@ You also discussed that one of the key risks would be that there may be huge vol
 ## Technologies used
 The technologies included in this entire project (including the [front-end](https://github.com/AJLandry1000000000/react-task-management), [back-end](https://github.com/AJLandry1000000000/task-management-app), containerisation, database, etc) are...
 - Backend: Typescript
-- Frontend: React (Javascript) + Vite 
-- Frontend: HTML/CSS
+- Frontend: React + Vite 
+- Package manager: Node Package Manager (npm)
 - Containerisation: Docker
 - Database: Postgres
 
@@ -178,3 +178,4 @@ The following features should be added to improve our applications features:
 - Add more tests.
 
 ## Tests
+ARE TESTS FOR THE FRONTEND REQUIRED? MAYBE THIS IS A FUTURE IMPROVEMENTS TASK?
