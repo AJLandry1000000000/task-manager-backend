@@ -112,7 +112,7 @@ Start the docker image (if it's not already running):
 In your root folder run the following ```package.json``` script to compile and start the application:  
 ```npm run start```
 
-Your backend is now running!
+Your back-end is now running!
 
 ## Design decisions: Approach for the "(Should have)" user stories
 Both "(Should have)" user stories concern modifying the task list viewable from the frontend. 
