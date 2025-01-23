@@ -40,7 +40,7 @@ You also discussed that one of the key risks would be that there may be huge vol
 
 
 ## Technologies used
-The technologies included in this entire project (including the [frontend](https://github.com/AJLandry1000000000/react-task-management), [backend](https://github.com/AJLandry1000000000/task-management-app), containerisation, database, etc) are...
+The technologies included in this entire project (including the [front-end](https://github.com/AJLandry1000000000/react-task-management), [back-end](https://github.com/AJLandry1000000000/task-management-app), containerisation, database, etc) are...
 - Backend: Typescript
 - Frontend: React (Javascript) + Vite 
 - Frontend: HTML/CSS
@@ -55,8 +55,12 @@ Note: To complete these steps you will need to install NodeJS, Typescript, Docke
 Run the following commands in your terminal to clone the code repository:  
 ```git clone https://github.com/AJLandry1000000000/task-management-app.git```
 
+### Install the packages
+Run the following commands to your root directory to install the node packages:  
+```npm install```
+
 ### Pull the Postgres docker image and configure
-Pull the PostgreSQL image: 
+Pull the PostgreSQL image:  
 ```docker pull postgres```  
 
 Create and run a Docker container:  
@@ -105,17 +109,20 @@ Once correctly configured, run the following commands in the root directory of t
 Start the docker image (if it's not already running):
 ```docker start ***put-your-container-name-here***```
 
-In your root folder run the ```following package.json``` script to compile and start the application:  
+In your root folder run the following ```package.json``` script to compile and start the application:  
 ```npm run start```
 
-Now your backend is running!
+Your backend is now running!
 
 ## Design decisions: Approach for the "(Should have)" user stories
-Both "(Should have)" user stories concern modifying the task list viewable from the frontend. My approach was to use a single endpoint (found in src/router/index.ts, ```GET /tasks-get/``` endpoint) to handle the sorting and searching functionality required in these user stories. 
+Both "(Should have)" user stories concern modifying the task list viewable from the frontend. 
+### Back-end changes
+My approach was to use a single endpoint (found in src/router/index.ts, ```GET /tasks-get/``` endpoint) to handle the sorting and searching functionality required in these user stories. 
 
 The ```/tasks-get/``` endpoint defines the expected parameters in the 'expectedParams' type definition.
 By default this endpoint shouldn't search for any task name or filter in any way, unless specified by the request parameters. 
 
+### Front-end changes
 The frontend has a button named "Filter Tasks". When clicked, this button should display a dropdown with filtering option. When selected, these filtering option fill a variable, ```getTaskPayload```, for the ```/tasks-get/``` endpoint and retrigger the fetching logic. 
 Filling this ```getTaskPayload``` variable with the search/ordering selections, and editing the ```useEffect()``` function in App.jsx (see code edit below) will automatically fill the frontend task list with the tasks filtered by the user. 
 ```
@@ -128,6 +135,7 @@ Filling this ```getTaskPayload``` variable with the search/ordering selections, 
 
   }, [getTaskPayload])
 ```
+<br>
 This satifies the "(Should have)" user stories. (Note that the ```/tasks-get/``` endpoint uses pagination. So adding filtering options to the fetching query will automatically return paginated results, mitigating the risk of huge task volumes causing performance issues.)
 
 
