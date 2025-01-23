@@ -188,3 +188,5 @@ I have included test (in test/taskRoutes.test.ts) for the following endpoints:
 I used Jest and supertest for the testing suite. 
 Run the tests with this command:  
 ```npm run test```
+
+Note: You will have to fill a ```.env.test``` file with dummy data similar to your ```.env``` file.
