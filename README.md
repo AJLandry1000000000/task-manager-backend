@@ -81,7 +81,7 @@ In the Postgres terminal grant all privileges on the new database to the new use
 ```GRANT ALL PRIVILEGES ON DATABASE task_management_db TO ***your-user-name-here***;```
 
 (Optional) Now you can connect to your database using your username and password:  
-```docker exec -it ***put-your-container-name-here*** psql -U ***your-user-name-here*** -d mydatabase```
+```docker exec -it ***put-your-container-name-here*** psql -U ***your-user-name-here*** -d task_management_db```
 
 ### Put your credentials in the .env folder in the root directory
 Your ```.env``` file should look like:  
