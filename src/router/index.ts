@@ -9,22 +9,19 @@ router.get('/health', (req: Request, res: Response) => {
     res.status(200).send('ok')
 });
 
-router.get('/tasks-all/:page', async (req: Request, res: Response) => {
+router.get('/tasks-get/:page', async (req: Request, res: Response) => {
     try {
         let page: number = Number(req.params.page)
-        let expect = {
-            page: 1,
-            order: 'asc',
-            due_date: 'created_at',
-            created_at: 'due_date'
 
+        type expectedParams = { // This type describes the expected parameters for requests satisfying the "(Should have)" user stories.
+            page: number; // Page number. Default functionality is 1.
+            search?: string; // Search string. This variable is used to filter the results by searching for a substring matching the 'search' valiable in the name column. Default functionality is no search filtering.
+            order?: string; // Order of the results. This variable can only be 'asc' or 'desc'. Default functionality is 'desc'.
+            due_date?: boolean; // This is a boolean variable that indicates if the results should be ordered by the due_date column. Default functionality is false.
+            created_at?: boolean; // This is a boolean variable that indicates if the results should be ordered by the created_at column. Default functionality is false.
         }
 
         if (!page || !(Number(page) >= 0)) {
-            // res.status(400).json({
-            //     message: "Bad Request"
-            // });
-            // return;
             page = 1;
         }
         let data = await TaskModel.all(page);
