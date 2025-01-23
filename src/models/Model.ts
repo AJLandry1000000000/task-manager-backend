@@ -1,4 +1,3 @@
-// import Knex from 'knex'; // TODO
 import { IWithPagination } from 'knex-paginate';
 import { database } from '../database/index';
 
@@ -45,7 +44,6 @@ export class Model {
         return this.table.where({ id }).first();
     }
 
-    // public static async findBy<Payload, Result>(data: Payload): ResponseType<Result | null> { // TODO
     public static async findBy<Payload, Result>(data: Payload): ResponseType<Result> {
         return this.table.where(data as string).first();
     }

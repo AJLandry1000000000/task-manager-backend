@@ -1,5 +1,4 @@
 require('dotenv').config();
-// require('ts-node/register'); // TODO
 
 import type { Knex } from 'knex';
 
