@@ -1,4 +1,4 @@
-import { DateType, Model} from './Model';
+import { Model} from './Model';
 
 export type TaskType = {
     id: number;
