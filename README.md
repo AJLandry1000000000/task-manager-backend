@@ -42,8 +42,8 @@ You also discussed that one of the key risks would be that there may be huge vol
 ## Technologies used
 The technologies included in this entire project (including the [front-end](https://github.com/AJLandry1000000000/react-task-management), [back-end](https://github.com/AJLandry1000000000/task-management-app), containerisation, database, etc) are...
 - Backend: Typescript
-- Frontend: React (Javascript) + Vite 
-- Frontend: HTML/CSS
+- Frontend: React + Vite 
+- Package manager: Node Package Manager (npm)
 - Containerisation: Docker
 - Database: Postgres
 
@@ -175,6 +175,16 @@ The following features should be added to improve our applications features:
 - Add labelling of tasks so they can be organised. This is critical for large volumes of tasks.
 - Build authorisation methods for our server so it is more secure.
 - Add more filtering options. e.g. filter tasks by a label, filter tasks by tasks created by the current user, etc.
-- Add more tests.
+- Add more tests for the back-end.
+- Add a test suite for the front-end.
 
 ## Tests
+I have included test (in test/taskRoutes.test.ts) for the following endpoints:
+- Check server health ```/health```
+- Create tasks ```/tasks-create/```
+- Update tasks ```/tasks-update/```
+- Get tasks ```/tasks-get/:page```
+
+I used Jest and supertest for the testing suite. 
+Run the tests with this command:  
+```npm run test```

@@ -25,7 +25,7 @@ router.get('/tasks-get/:page', async (req: Request, res: Response) => {
             page = 1;
         }
         let data = await TaskModel.all(page);
-        res.json(data)
+        res.status(200).json(data)
     } catch (error) {
         res.status(500).json({
             message: "Server Error!"
@@ -51,7 +51,7 @@ router.get('/tasks-by-column/:column/:order/:page', async (req: Request, res: Re
             return;
         }
 
-        res.json({
+        res.status(200).json({
             data: await TaskModel.findByColumnOrdered(column, order, page)
         })
 
@@ -88,7 +88,7 @@ router.put('/tasks-update/', async (req: Request, res: Response) => {
     }
 
     try {
-        res.json({
+        res.status(200).json({
             data: await TaskModel.update(id, updateObject)
         })
 
@@ -127,7 +127,7 @@ router.put('/tasks-create/', async (req: Request, res: Response) => {
     }
 
     try {
-        res.json({
+        res.status(200).json({
             data: await TaskModel.create(createObject)
         })
         console.log('Task created with this data: ', req.body)
