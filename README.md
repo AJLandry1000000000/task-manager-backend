@@ -60,6 +60,7 @@ Run the following commands to your root directory to install the node packages:
 ```npm install```
 
 ### Pull the Postgres docker image and configure
+(Note: Take note of the information you use to configure the database and container because you will need them when filling in your ```.env``` file.)  
 Pull the PostgreSQL image:  
 ```docker pull postgres```  
 
@@ -77,14 +78,14 @@ In the Postgres terminal create a user:
 In the Postgres terminal create a new database for our task management application:  
 ```CREATE DATABASE task_management_db;```  
 
-In the Postgres terminal grant all privileges on the new database to the new user:  
-```GRANT ALL PRIVILEGES ON DATABASE task_management_db TO ***your-user-name-here***;```
+In the Postgres terminal grant all privileges to the new user so they can create and query from the new database:  
+```ALTER USER ***your-user-name-here*** WITH SUPERUSER;```
 
-(Optional) Now you can connect to your database using your username and password:  
+(Optional) Now in your terminal you should be able to connect to your database using your username and password:  
 ```docker exec -it ***put-your-container-name-here*** psql -U ***your-user-name-here*** -d task_management_db```
 
 ### Put your credentials in the .env folder in the root directory
-Your ```.env``` file should look like:  
+Your ```.env``` file should contain the information you used to run the above commands:  
 ```
 # General
 PORT=9000
@@ -101,6 +102,9 @@ DB_PASSWORD="***some password***"
 DEFAULT_PASSWORD="***some password***"
 ```
 
+### Build your database schema
+Run the knex migrations to build your database tables:  
+```npm run migrate:latest```  
 
 ## Steps to run
 ### Include the scripts in package.json
