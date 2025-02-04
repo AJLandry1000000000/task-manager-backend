@@ -15,5 +15,3 @@ Fullstack_Tech_Challenge.docx
 node_modules/
 package-lock.json
 
-# Migrations
-src/database/migrations/
